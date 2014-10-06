@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "SortAlgorithm.h"
-const int MAX_ARRAY_LENGTH = 697687; /* 可能造成内存读错误，原因未明 */
+const int MAX_ARRAY_LENGTH = 697687; /* BUG might exist here. Memory segment fault... */
 
 typedef enum { FALSE = 0, TRUE = 1 } BOOL;
 typedef void (*pSort) ( ElementType*, Position );
