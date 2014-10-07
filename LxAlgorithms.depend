@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1410350239 source:/home/lx/LxAlgorithms/main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"SortAlgorithm.h"
+
+1410345089 /home/lx/LxAlgorithms/SortAlgorithm.h
+	<stddef.h>
+
+1410345604 source:/home/lx/LxAlgorithms/SortAlgorithm.c
+	"SortAlgorithm.h"
+	<math.h>
+	<memory.h>
+
