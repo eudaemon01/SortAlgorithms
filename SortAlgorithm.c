@@ -1,6 +1,7 @@
 #include "SortAlgorithm.h"
 #include <math.h>
-#include <memory.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #define MAX_INCREMENTS 32
 /* The gap sequence corresponding Worst-case time complexity: O( n^(4/3 ))
@@ -69,12 +70,8 @@ static void MSort( ElementType* keys, Position left, Position right )
     }
 }
 
-/* 已修复的bug：
-    描述：运行时可能产生错误，valgrind提示是 if ( keys[j] <= pivot_element ) 这一行
-   Conditional jump or move depends on uninitialised value(s)
-    原因：采用size_t作为Position类型，无符号数在减1时发生下溢，因此lxQSort()在递归调用时可能产生right参数为一个
-    很大的正数的情况。
-    措施：改用long int作为Position类型。 */
+/* Fixed bug：
+    Position shall not typedef as unsigned int, or this function may corrupt while decrement index! */
 static Position PartitionForQsort ( ElementType* keys , Position left, Position right )
 {
     Position pivot, j;

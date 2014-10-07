@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "SortAlgorithm.h"
-const int MAX_ARRAY_LENGTH = 697687; /* BUG might exist here. Memory segment fault... */
+const int MAX_ARRAY_LENGTH = 10000; /* BUG: Segmentation fault when bigger than 697687 */
 
 typedef enum { FALSE = 0, TRUE = 1 } BOOL;
 typedef void (*pSort) ( ElementType*, Position );
@@ -40,7 +40,7 @@ void testAllSortAlgorithms( void );
 void testQuickSortAlgorithm( void );
 int main()
 {
-    /*testAllSortAlgorithms();*/
+    testAllSortAlgorithms();
     testQuickSortAlgorithm();
     return EXIT_SUCCESS;
 }
